@@ -8,7 +8,7 @@ let btnAjouter = document.getElementById("boutonAjouter");
 
 let firstInput = document.getElementById("premierInput");
 
-function todoList(){
+function todoList() {
     let valFirstInput = firstInput.value;
 
     // firstInput.addEventListener("keydown",(element)=>{
@@ -25,6 +25,7 @@ function todoList(){
 
     div.style.backgroundColor = "rgb(240,128,128)";
     div.style.border = "2px solid red";
+    div.style.borderRadius = "5px";
     div.style.color = "white";
     div.style.padding = "5px";
     div.style.width = "550px";
@@ -41,7 +42,7 @@ function todoList(){
 
     let contentBoutons = document.createElement("div");
     contentBoutons.style.display = "flex";
-    contentBoutons.style.backgroundColor = "rgb(39,83,165)";
+    // contentBoutons.style.backgroundColor = "black";
     contentBoutons.style.flexDirection = "column";
     div.appendChild(contentBoutons);
 
@@ -49,16 +50,30 @@ function todoList(){
     let txtBoutonFini = document.createTextNode("Finir");
     boutonFini.appendChild(txtBoutonFini);
     contentBoutons.appendChild(boutonFini);
+    boutonFini.style.color = "white";
+    boutonFini.style.backgroundColor = "#b81515";
+    boutonFini.style.padding = "2%";
+    boutonFini.style.border = "1px solid white";
+    boutonFini.style.borderRadius = "5px";
+
 
     boutonFini.addEventListener("click", function () {
         div.style.backgroundColor = "lightgreen";
         div.style.border = "2px solid green";
         boutonFini.innerHTML = "Fini";
+        boutonFini.style.backgroundColor = "darkgreen";
+        boutonFini.style.padding = "2%";
+        boutonFini.style.border = "1px solid white";
+        boutonFini.style.borderRadius = "5px";
+
 
         boutonFini.addEventListener("dblclick", function () {
             div.style.backgroundColor = "rgb(240,128,128)";
             div.style.border = "2px solid red";
             boutonFini.innerHTML = "Finir";
+            boutonFini.style.backgroundColor = "#b81515";
+
+
         })
     })
 
@@ -68,6 +83,12 @@ function todoList(){
     let txtBoutonModif = document.createTextNode("Modifier");
     boutonModif.appendChild(txtBoutonModif);
     contentBoutons.appendChild(boutonModif);
+    boutonModif.style.backgroundColor = "transparent";
+    boutonModif.style.color = "white";
+    boutonModif.style.border = "0px";
+    boutonModif.style.padding = "2%";
+    boutonModif.style.borderRadius = "5px";
+
 
     boutonModif.addEventListener("click", function () {
         let nvlValeur = document.createElement("input");
@@ -104,6 +125,11 @@ function todoList(){
     let txtBoutonSupp = document.createTextNode("Supprimer");
     boutonSupp.appendChild(txtBoutonSupp);
     contentBoutons.appendChild(boutonSupp);
+    boutonSupp.style.backgroundColor = "transparent";
+    boutonSupp.style.color = "white";
+    boutonSupp.style.border = "0px";
+    boutonSupp.style.padding = "3%";
+    boutonSupp.style.borderRadius = "0px";
 
     boutonSupp.addEventListener("click", function () {
 
@@ -133,37 +159,37 @@ function todoList(){
     let btnVoirTout = document.getElementById("boutonTous");
     btnVoirTout.addEventListener("click", function () {
         div.style.display = "flex";
+        // btnVoirTout.style.backgroundColor = "red";
     })
 
     let btnVoirEnCours = document.getElementById("boutonEnCours");
-    btnVoirEnCours.addEventListener("click",function(){
-        if(div.style.border == "2px solid red"){
+    btnVoirEnCours.addEventListener("click", function () {
+        if (div.style.border == "2px solid red") {
             div.style.display = "flex";
         }
-        else{
+        else {
             div.style.display = "none";
         }
+        // btnVoirEnCours.style.backgroundColor = "red";
+
     })
 
     let btnVoirFini = document.getElementById("boutonFini");
-    btnVoirFini.addEventListener("click",function(){
-        if(div.style.border != "2px solid red"){
+    btnVoirFini.addEventListener("click", function () {
+        if (div.style.border != "2px solid red") {
             div.style.display = "flex";
         }
-        else{
+        else {
             div.style.display = "none";
         }
     })
-
-    
-
 
 }
 
 btnAjouter.addEventListener("click", todoList);
 
-firstInput.addEventListener("keydown",(element)=>{
-        if(element.key === 'Enter'){
-            todoList();
-        }
-    })
+firstInput.addEventListener("keydown", (element) => {
+    if (element.key === 'Enter') {
+        todoList();
+    }
+})

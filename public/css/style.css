@@ -1,13 +1,81 @@
-body{
+body {
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: rgb(231, 205, 171);
 }
 
-#boutonTrier{
+#boutonTrier {
     /* background-color: green; */
     margin-top: 2%;
     width: 50%;
     margin-left: 25%;
+}
+
+#boutonTous{
+    background-color: #b81515;
+    color: white;
+    border: 0px;
+    padding: 1%;
+}
+
+#boutonEnCours{
+    background-color: #b81515;
+    color: white;
+    border: 0px;
+    padding: 1%;
+}
+
+#boutonFini{
+    background-color: #b81515;
+    color: white;
+    border: 0px;
+    padding: 1%;
+}
+
+#boutonAjouter {
+    background-color: #b81515;
+    width: 100px;
+    color: white;
+    padding: 2px;
+    border: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: btnAjouter 3s infinite;
+    cursor: pointer;
+}
+
+@keyframes btnAjouter {
+
+    5%,
+    50% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1) rotate(-5deg);
+    }
+
+    25% {
+        transform: scale(1) rotate(5deg);
+    }
+
+    30% {
+        transform: scale(1) rotate(-3deg);
+    }
+
+    35% {
+        transform: scale(1) rotate(2deg);
+    }
+
+    40% {
+        transform: scale(1) rotate(0);
+    }
 }
