@@ -6,13 +6,18 @@ let btnAjouter = document.getElementById("boutonAjouter");
 
 
 btnAjouter.addEventListener("click",function(){
+
     let firstInput = document.getElementById("premierInput");
     let valFirstInput = firstInput.value;
     // console.log(valFirstInput);
 
     let div = document.createElement("div");
-    let txt = document.createTextNode(valFirstInput);
-    div.appendChild(txt);
+    let paragraphe = document.createElement("p");
+    let txtParagraphe = document.createTextNode(valFirstInput);
+    paragraphe.appendChild(txtParagraphe);
+    div.appendChild(paragraphe);
+    // console.log(paragraphe.innerHTML);
+
 
     div.style.backgroundColor = "rgb(240,128,128)";
     div.style.border = "2px solid red";
@@ -61,33 +66,24 @@ btnAjouter.addEventListener("click",function(){
         boutonModif.replaceWith(validModif);
         contentBoutons.insertBefore(validModif, boutonSupp);
 
-        // validModif.addEventListener("click",function(){
-        //     // valFirstInput = nvlValeur.value;
-        //     console.log(`ANCIENNE VALEUR: ${div.innerText}`);
+        validModif.addEventListener("click",function(){
+            // valFirstInput = nvlValeur.value;
 
-        //     console.log(`NOUVELLE VALEUR: ${nvlValeur.value}`);
+            paragraphe.innerHTML = nvlValeur.value;
+            console.log(`ANCIENNE VALEUR: ${paragraphe.innerHTML}`);
+
+            console.log(`NOUVELLE VALEUR: ${paragraphe.innerHTML}`);
             
-        //     let test = document.createTextNode(nvlValeur.value);
-        //     txt.replaceWith(test);
+            // let test = document.createTextNode(nvlValeur.value);
+            // txt.replaceWith(test);
 
-        //     validModif.replaceWith(boutonModif);
-        //     nvlValeur.remove();
-        // })
+            validModif.replaceWith(boutonModif);
+            nvlValeur.remove();
+        })
 
     })
 
-    validModif.addEventListener("click",function(){
-        // valFirstInput = nvlValeur.value;
-        console.log(`ANCIENNE VALEUR: ${div.innerText}`);
-
-        console.log(`NOUVELLE VALEUR: ${nvlValeur.value}`);
-        
-        let test = document.createTextNode(nvlValeur.value);
-        txt.replaceWith(test);
-
-        validModif.replaceWith(boutonModif);
-        nvlValeur.remove();
-    })
+   
 
      // ! -------------------------------------------------
 
