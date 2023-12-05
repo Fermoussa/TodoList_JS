@@ -2,6 +2,12 @@ body{
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: beige;
+    background-color: rgb(231, 205, 171);
 }
 
+#boutonTrier{
+    /* background-color: green; */
+    margin-top: 2%;
+    width: 50%;
+    margin-left: 25%;
+}
