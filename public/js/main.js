@@ -4,11 +4,18 @@ let btnAjouter = document.getElementById("boutonAjouter");
 
 
 
+// btnAjouter.addEventListener("click", todoList())
 
-btnAjouter.addEventListener("click", function () {
+let firstInput = document.getElementById("premierInput");
 
-    let firstInput = document.getElementById("premierInput");
+function todoList(){
     let valFirstInput = firstInput.value;
+
+    // firstInput.addEventListener("keydown",(element)=>{
+    //     if(element.key === 'Enter'){
+
+    //     }
+    // })
 
     let div = document.createElement("div");
     let paragraphe = document.createElement("p");
@@ -151,5 +158,12 @@ btnAjouter.addEventListener("click", function () {
     
 
 
-})
+}
 
+btnAjouter.addEventListener("click", todoList);
+
+firstInput.addEventListener("keydown",(element)=>{
+        if(element.key === 'Enter'){
+            todoList();
+        }
+    })
