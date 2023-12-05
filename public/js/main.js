@@ -9,14 +9,12 @@ btnAjouter.addEventListener("click",function(){
 
     let firstInput = document.getElementById("premierInput");
     let valFirstInput = firstInput.value;
-    // console.log(valFirstInput);
 
     let div = document.createElement("div");
     let paragraphe = document.createElement("p");
     let txtParagraphe = document.createTextNode(valFirstInput);
     paragraphe.appendChild(txtParagraphe);
     div.appendChild(paragraphe);
-    // console.log(paragraphe.innerHTML);
 
 
     div.style.backgroundColor = "rgb(240,128,128)";
@@ -40,13 +38,20 @@ btnAjouter.addEventListener("click",function(){
     div.appendChild(contentBoutons);
 
     let boutonFini = document.createElement("button");
-    let txtBoutonFini = document.createTextNode("Fini");
+    let txtBoutonFini = document.createTextNode("Finir");
     boutonFini.appendChild(txtBoutonFini);
     contentBoutons.appendChild(boutonFini);
 
     boutonFini.addEventListener("click",function(){
         div.style.backgroundColor = "lightgreen";
         div.style.border = "2px solid green";
+        boutonFini.innerHTML = "Fini";
+
+        boutonFini.addEventListener("dblclick",function(){
+            div.style.backgroundColor = "rgb(240,128,128)";
+            div.style.border = "2px solid red";
+            boutonFini.innerHTML = "Finir";
+        })
     })
 
     // ! -------------------------------------------------
@@ -91,6 +96,29 @@ btnAjouter.addEventListener("click",function(){
     let txtBoutonSupp = document.createTextNode("Supprimer");
     boutonSupp.appendChild(txtBoutonSupp);
     contentBoutons.appendChild(boutonSupp);
+
+    boutonSupp.addEventListener("click",function(){
+        
+        let confirmSupp = document.createElement("button");
+        let txtConfirmSupp = document.createTextNode("Confirmez supression");
+        confirmSupp.appendChild(txtConfirmSupp);
+        contentBoutons.appendChild(confirmSupp);
+        boutonSupp.replaceWith(confirmSupp);
+
+        confirmSupp.addEventListener("click",function(){
+            div.remove();
+        })
+        // * -----------------------------------------
+        let annulerSupp = document.createElement("button");
+        let txtAnnuleSupp = document.createTextNode("Annuler supression");
+        annulerSupp.appendChild(txtAnnuleSupp);
+        contentBoutons.appendChild(annulerSupp);
+
+        annulerSupp.addEventListener("click",function(){
+            confirmSupp.replaceWith(boutonSupp);
+            annulerSupp.remove();
+        })
+    })
 
 
 })
