@@ -55,6 +55,7 @@ function todoList() {
     boutonFini.style.padding = "2%";
     boutonFini.style.border = "1px solid white";
     boutonFini.style.borderRadius = "5px";
+    boutonFini.style.marginBottom = "3px";
 
 
     boutonFini.addEventListener("click", function () {
@@ -83,11 +84,13 @@ function todoList() {
     let txtBoutonModif = document.createTextNode("Modifier");
     boutonModif.appendChild(txtBoutonModif);
     contentBoutons.appendChild(boutonModif);
-    boutonModif.style.backgroundColor = "transparent";
+    boutonModif.style.backgroundColor = "#b81515";
     boutonModif.style.color = "white";
-    boutonModif.style.border = "0px";
+    boutonModif.style.border = "1px solid white";
     boutonModif.style.padding = "2%";
     boutonModif.style.borderRadius = "5px";
+    boutonModif.style.width = "85px";
+    boutonModif.style.marginBottom = "3px";
 
 
     boutonModif.addEventListener("click", function () {
@@ -96,6 +99,14 @@ function todoList() {
 
         let validModif = document.createElement("button");
         let txtValid = document.createTextNode("Ok");
+        validModif.style.background = "#b81515";
+        validModif.style.border = "1px solid white";
+        validModif.style.color = "white";
+        validModif.style.borderRadius = "50%";
+        validModif.style.width = "30px";
+        validModif.style.textAlign = "center";
+        validModif.style.marginLeft = "43%";
+
         validModif.appendChild(txtValid);
         boutonModif.replaceWith(validModif);
         contentBoutons.insertBefore(validModif, boutonSupp);
@@ -122,14 +133,15 @@ function todoList() {
     // ! -------------------------------------------------
 
     let boutonSupp = document.createElement("button");
-    let txtBoutonSupp = document.createTextNode("Supprimer");
+    let txtBoutonSupp = document.createTextNode("Delete");
     boutonSupp.appendChild(txtBoutonSupp);
     contentBoutons.appendChild(boutonSupp);
     boutonSupp.style.backgroundColor = "transparent";
     boutonSupp.style.color = "white";
-    boutonSupp.style.border = "0px";
+    boutonSupp.style.border = "1px solid white";
+    boutonSupp.style.backgroundColor = "#b81515";
     boutonSupp.style.padding = "3%";
-    boutonSupp.style.borderRadius = "0px";
+    boutonSupp.style.borderRadius = "5px";
 
     boutonSupp.addEventListener("click", function () {
 
@@ -138,6 +150,10 @@ function todoList() {
         confirmSupp.appendChild(txtConfirmSupp);
         contentBoutons.appendChild(confirmSupp);
         boutonSupp.replaceWith(confirmSupp);
+        confirmSupp.style.backgroundColor = "darkgreen";
+        confirmSupp.style.color = "white";
+        confirmSupp.style.border = "1px solid black";
+
 
         confirmSupp.addEventListener("click", function () {
             div.remove();
@@ -147,6 +163,9 @@ function todoList() {
         let txtAnnuleSupp = document.createTextNode("Annuler supression");
         annulerSupp.appendChild(txtAnnuleSupp);
         contentBoutons.appendChild(annulerSupp);
+        annulerSupp.style.backgroundColor = "#b81515";
+        annulerSupp.style.border = "1px solid black";
+        annulerSupp.style.color = "white";
 
         annulerSupp.addEventListener("click", function () {
             confirmSupp.replaceWith(boutonSupp);
